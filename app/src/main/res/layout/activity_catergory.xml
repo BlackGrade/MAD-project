@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CatergoryActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="30dp"
+        android:layout_marginEnd="30dp"
+        android:layout_marginTop="225dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/incomeMain"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_marginTop="10dp"
+                android:text="INCOME">
+
+            </Button>
+
+            <Button
+                android:id="@+id/expenseMain"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:layout_below="@id/incomeMain"
+                android:layout_marginTop="5dp"
+                android:text="Expenses">
+
+            </Button>
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>
