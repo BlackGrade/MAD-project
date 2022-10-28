@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 
 import com.example.expenda.databinding.ActivityIncomeCmainBinding;
 import com.google.firebase.auth.FirebaseAuth;
@@ -36,6 +37,14 @@ public class IncomeCMainActivity extends AppCompatActivity {
         firebaseAuth = FirebaseAuth.getInstance();
         checkUser();
         loadCategories();
+
+        binding.ctr.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(IncomeCMainActivity.this,IncomCatergoryActivity.class));
+
+            }
+        });
     }
 
     private void loadCategories() {

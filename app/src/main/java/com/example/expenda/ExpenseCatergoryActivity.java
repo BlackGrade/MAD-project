@@ -66,24 +66,24 @@ public class ExpenseCatergoryActivity extends AppCompatActivity {
         progressDialog.setTitle("Saving User Info..");
         progressDialog.show();
 
-        long timestamp = System.currentTimeMillis();
+        long timestamps = System.currentTimeMillis();
 
         String  uid = firebaseAuth.getUid();
 
         HashMap<String , Object> hashMap = new HashMap<>();
-        hashMap.put("id",""+timestamp);
+        hashMap.put("id",""+timestamps);
         hashMap.put("uid",uid);
         hashMap.put("category",expenseC);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("ExpensesC");
-        ref.child(""+timestamp)
+        ref.child(firebaseAuth.getUid()).child(""+timestamps)
                 .setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
                         Toast.makeText(ExpenseCatergoryActivity.this,"Account Created",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ExpenseCatergoryActivity.this,IncomCatergoryActivity.class));
+                        startActivity(new Intent(ExpenseCatergoryActivity.this,ExpenseCMainActivity.class));
                         finish();
 
                     }

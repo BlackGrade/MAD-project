@@ -3,6 +3,7 @@ package com.example.expenda;
 public class ModelCategory {
     String id,category;
     long timestamp;
+    String Url;
 
     public ModelCategory() {
 
@@ -12,6 +13,7 @@ public class ModelCategory {
         this.id = id;
         this.category = category;
         this.timestamp = timestamp;
+        this.Url = Url;
     }
 
     public String getId() {
@@ -37,4 +39,8 @@ public class ModelCategory {
     public void setTimestamp(long timestamp) {
         this.timestamp = timestamp;
     }
+
+    public String getUrl(){return Url;}
+
+    public void setUrl(String Url){this.Url=Url;}
 }

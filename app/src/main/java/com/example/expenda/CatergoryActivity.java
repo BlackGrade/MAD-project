@@ -28,7 +28,7 @@ public class CatergoryActivity extends AppCompatActivity {
         binding.expenseMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                startActivity(new Intent(CatergoryActivity.this,IncomCatergoryActivity.class));
+                startActivity(new Intent(CatergoryActivity.this,ExpenseCMainActivity.class));
 
             }
         });
