@@ -74,11 +74,6 @@ public class activity_login extends AppCompatActivity {
         else{
             loginUser();
         }
-
-
-
-
-
     }
 
     private void loginUser() {
@@ -90,10 +85,7 @@ public class activity_login extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
-                        startActivity(new Intent(activity_login.this,CatergoryActivity.class));
-                        finish();
-
-
+                        startActivity(new Intent(activity_login.this, CatergoryActivity.class));
 
                     }
                 })

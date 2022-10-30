@@ -4,38 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CatergoryActivity">
+    tools:context=".CatergoryActivity"
+    android:padding="20dp">
 
-    <RelativeLayout
+    <LinearLayout
+        android:id="@+id/layoutToolBar"
         android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/purple_700">
+        android:layout_height="?actionBarSize"
+        android:background="#6200ee"
+        android:orientation="horizontal"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:gravity="center_vertical"
+        android:layout_marginBottom="30dp"
+        >
 
-        <TextView
-
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:text="categories"
-            android:textColor="@color/white"
-            android:textSize="25dp">
-
-
-        </TextView>
-        <ImageButton
-            android:id="@+id/backBtn"
+        <com.mikhaellopez.circularimageview.CircularImageView
+            android:id="@+id/toolBarPic"
             android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_back"
-            android:background="@color/purple_700">
+            android:layout_height="30dp"
+            android:src="@drawable/profpic"
+            app:civ_border_width="1dp"
+            />
 
 
-        </ImageButton>
+    </LinearLayout>
 
 
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"

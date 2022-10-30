@@ -32,6 +32,13 @@ public class ExpenseCatergoryActivity extends AppCompatActivity {
         binding = ActivityExpenseCatergoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolBarPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(ExpenseCatergoryActivity.this, Profile.class));
+            }
+        });
+
         firebaseAuth = FirebaseAuth.getInstance();
 
         progressDialog = new ProgressDialog(this);
