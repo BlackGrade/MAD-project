@@ -9,7 +9,7 @@
     <RelativeLayout
         android:id="@+id/header"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="70dp"
         android:background="@color/purple_700">
 
         <TextView
@@ -24,16 +24,17 @@
 
 
         </TextView>
+
         <TextView
 
             android:layout_width="match_parent"
-            android:layout_height="20dp"
+            android:layout_height="40dp"
+            android:layout_below="@+id/heTile"
             android:fontFamily="casual"
             android:gravity="center"
             android:text="+Income"
             android:textColor="@color/white"
-            android:textSize="15dp"
-            android:layout_below="@+id/heTile">
+            android:textSize="15dp">
 
 
         </TextView>
@@ -50,10 +51,25 @@
 
 
     </RelativeLayout>
+    <RelativeLayout
+        android:id="@+id/search"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@+id/header">
+
+        <EditText
+            android:id="@+id/search_bar"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:hint="Search">
+
+
+        </EditText>
+    </RelativeLayout>
 
 
     <androidx.recyclerview.widget.RecyclerView
-        android:layout_below="@+id/header"
+        android:layout_below="@+id/search"
         android:id="@+id/ctagory"
 
         android:layout_width="match_parent"

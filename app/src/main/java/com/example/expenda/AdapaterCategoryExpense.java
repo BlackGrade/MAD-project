@@ -117,7 +117,7 @@ public class AdapaterCategoryExpense extends RecyclerView.Adapter<AdapaterCatego
 
 
     }
-
+//Delete CRUD expenses
     private void deleteExpensecat(ModelCategory model, HolderCategory holder) {
         String id = firebaseAuth.getUid();
         String id2 = model.getId();

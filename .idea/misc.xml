@@ -7,12 +7,12 @@
         <entry key="app/src/main/res/drawable/update_button.xml" value="0.138" />
         <entry key="app/src/main/res/layout/activity_catergory.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/activity_edit_cat.xml" value="0.13677536231884058" />
-        <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.10914855072463768" />
+        <entry key="app/src/main/res/layout/activity_edit_category.xml" value="0.1456887728926065" />
         <entry key="app/src/main/res/layout/activity_edit_categoryExpense.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_edit_category_expense.xml" value="0.15070921985815602" />
         <entry key="app/src/main/res/layout/activity_edit_expense.xml" value="0.14387031408308004" />
         <entry key="app/src/main/res/layout/activity_expense_catergory.xml" value="0.15070921985815602" />
-        <entry key="app/src/main/res/layout/activity_expense_cmain.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_expense_cmain.xml" value="0.24275360107421876" />
         <entry key="app/src/main/res/layout/activity_incom_catergory.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/activity_income_cmain.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_login.xml" value="0.25" />

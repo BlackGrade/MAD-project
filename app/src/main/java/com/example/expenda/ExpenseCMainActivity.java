@@ -44,6 +44,7 @@ public class ExpenseCMainActivity extends AppCompatActivity {
         });
     }
 
+    //Expenses Categories Read Crud
     private void loadCategories() {
 
         categoryArrayList = new ArrayList<>();
