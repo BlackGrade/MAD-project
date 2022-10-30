@@ -23,7 +23,8 @@ public class ExpenseCMainActivity extends AppCompatActivity {
     private FirebaseAuth firebaseAuth;
 
     private ArrayList<ModelCategory> categoryArrayList;
-    private AdapaterCategory adapaterCategory;
+
+    private AdapaterCategoryExpense adapaterCategoryExpense;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -58,8 +59,8 @@ public class ExpenseCMainActivity extends AppCompatActivity {
                             categoryArrayList.add(model);
 
                         }
-                        adapaterCategory = new AdapaterCategory(ExpenseCMainActivity.this,categoryArrayList);
-                        binding.ctagory.setAdapter(adapaterCategory);
+                        adapaterCategoryExpense = new AdapaterCategoryExpense(ExpenseCMainActivity.this,categoryArrayList);
+                        binding.ctagory.setAdapter(adapaterCategoryExpense);
 
 
                     }

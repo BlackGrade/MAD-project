@@ -69,27 +69,24 @@ public class IncomCatergoryActivity extends AppCompatActivity {
         progressDialog.setTitle("Saving User Info..");
         progressDialog.show();
 
-        long timestamp = System.currentTimeMillis();
+        long timestamps = System.currentTimeMillis();
 
         String  uid = firebaseAuth.getUid();
 
-
-
         HashMap<String , Object> hashMap = new HashMap<>();
-        hashMap.put("id",""+timestamp);
+        hashMap.put("id",""+timestamps);
         hashMap.put("uid",uid);
         hashMap.put("category",incomeC);
 
-
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("incomeC");
-        ref.child(firebaseAuth.getUid()).child(""+timestamp)
+        ref.child(firebaseAuth.getUid()).child(""+timestamps)
                 .setValue(hashMap)
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
                         Toast.makeText(IncomCatergoryActivity.this,"Account Created",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(IncomCatergoryActivity.this,IncomeCMainActivity.class));
+                        startActivity(new Intent(IncomCatergoryActivity.this,ExpenseCMainActivity.class));
                         finish();
 
                     }

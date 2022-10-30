@@ -14,6 +14,12 @@
         android:theme="@style/Theme.MaterialComponents.Light.NoActionBar"
         tools:targetApi="31">
         <activity
+            android:name=".EditCatActivity"
+            android:exported="false" />
+        <activity
+            android:name=".EditCategoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ExpenseCMainActivity"
             android:exported="false" />
         <activity
