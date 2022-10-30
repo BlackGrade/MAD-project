@@ -6,8 +6,56 @@
     android:layout_height="match_parent"
     tools:context=".IncomeCMainActivity">
 
+    <RelativeLayout
+        android:id="@+id/header"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/purple_700">
+
+        <TextView
+            android:id="@+id/heTile"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="categories"
+            android:textColor="@color/white"
+            android:textSize="20dp">
+
+
+        </TextView>
+        <TextView
+
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:fontFamily="casual"
+            android:gravity="center"
+            android:text="+Income"
+            android:textColor="@color/white"
+            android:textSize="15dp"
+            android:layout_below="@+id/heTile">
+
+
+        </TextView>
+        <ImageButton
+            android:id="@+id/backBtn"
+            android:layout_width="30dp"
+            android:layout_height="40dp"
+            android:src="@drawable/ic_back"
+            android:background="@color/purple_700">
+
+
+        </ImageButton>
+
+
+
+    </RelativeLayout>
+
+
     <androidx.recyclerview.widget.RecyclerView
+        android:layout_below="@+id/header"
         android:id="@+id/ctagory"
+
         android:layout_width="match_parent"
         android:layout_height="match_parent"
        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"

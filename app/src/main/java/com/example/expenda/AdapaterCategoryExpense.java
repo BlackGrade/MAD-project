@@ -5,7 +5,6 @@ import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,23 +16,22 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.expenda.databinding.RowCategoryBinding;
-
+import com.example.expenda.databinding.RowCategoryExpenseBinding;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.storage.FirebaseStorage;
-import com.google.firebase.storage.StorageReference;
 
 import java.util.ArrayList;
 
-public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.HolderCategory> {
+public class AdapaterCategoryExpense extends RecyclerView.Adapter<AdapaterCategoryExpense.HolderCategory> {
 
     private Context context;
     private ArrayList<ModelCategory> categoryArrayList;
 
-    private RowCategoryBinding binding;
+
+    private RowCategoryExpenseBinding expenseBinding;
 
     private FirebaseAuth firebaseAuth;
 
@@ -45,7 +43,7 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
 
 
 
-    public AdapaterCategory(Context context, ArrayList<ModelCategory> categoryArrayList) {
+    public AdapaterCategoryExpense(Context context, ArrayList<ModelCategory> categoryArrayList) {
         this.context = context;
         this.categoryArrayList = categoryArrayList;
         firebaseAuth = FirebaseAuth.getInstance();
@@ -59,8 +57,8 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
     @Override
     public HolderCategory onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
 
-        binding = RowCategoryBinding.inflate(LayoutInflater.from(context),parent,false);
-        return new HolderCategory(binding.getRoot());
+        expenseBinding = RowCategoryExpenseBinding.inflate(LayoutInflater.from(context),parent,false);
+        return new HolderCategory(expenseBinding.getRoot());
 
 
     }
@@ -71,7 +69,6 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
     public void onBindViewHolder(@NonNull HolderCategory holder, int position) {
         ModelCategory model = categoryArrayList.get(position);
         String id = model.getId();
-        String uid = model.getUid();
         String category = model.getCategory();
         long timestamp = model.getTimestamp();
 
@@ -89,8 +86,8 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
                             @Override
                             public void onClick(DialogInterface dialogInterface, int which) {
                                 Toast.makeText(context,"Deleting..",Toast.LENGTH_SHORT).show();
-                                deleteCategory(model,holder);
 
+                                deleteExpensecat(model,holder);
 
                             }
                         })
@@ -110,57 +107,22 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
         holder.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(context,EditCategoryActivity.class);
+                Intent intent = new Intent(context,EditCatActivity.class);
                 intent.putExtra("id",model.id);
-               intent.putExtra("uid",model.Uid);
+                intent.putExtra("uid",model.Uid);
                 context.startActivity(intent);
             }
         });
 
 
-//        holder.updateBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                moreOptionDialog(model,holder);
-//            }
-//        });
-
-
 
     }
 
-//    private void moreOptionDialog(ModelCategory model, HolderCategory holder) {
-//        long timestamps = System.currentTimeMillis();
-//        String[] options = {"Edit","Delete"};
-//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-//        builder.setTitle("Choose Option")
-//                .setItems(options, new DialogInterface.OnClickListener() {
-//                    @Override
-//                    public void onClick(DialogInterface dialogInterface, int i) {
-//                        if(i==0){
-//                            Intent intent = new Intent(context,EditCategoryActivity.class);
-//                            intent.putExtra("id",model.id);
-//                            intent.putExtra("uid",model.Uid);
-//
-//
-//                            context.startActivity(intent);
-//
-//                        }
-//                        else if (i==1){
-//                            deleteCategory(model,holder);
-//                        }
-//
-//                    }
-//                })
-//                .show();
-//    }
-
-
-    private void deleteCategory(ModelCategory model, HolderCategory holder) {
+    private void deleteExpensecat(ModelCategory model, HolderCategory holder) {
         String id = firebaseAuth.getUid();
         String id2 = model.getId();
         long timestamp = model.getTimestamp();
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("incomeC");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("ExpensesC");
         reference.child(id).child(id2)
                 .removeValue()
                 .addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -177,7 +139,10 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
 
                     }
                 });
+
     }
+
+
 
 
     @Override
@@ -193,9 +158,9 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
 
         public HolderCategory(@NonNull View itemView) {
             super(itemView);
-            categoryTv = binding.categoryTv;
-            updateBtn = binding.updateBtn;
-            delBtn = binding.delBtn;
+            categoryTv = expenseBinding.categoryTv;
+            updateBtn = expenseBinding.updateBtn;
+            delBtn = expenseBinding.delBtn;
 
 
         }
