@@ -30,36 +30,7 @@
 
     </LinearLayout>
 
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="40dp"
-        android:background="@color/purple_700">
 
-        <TextView
-
-            android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:fontFamily="casual"
-            android:gravity="center"
-            android:text="categories"
-            android:textColor="@color/white"
-            android:textSize="25dp">
-
-
-        </TextView>
-        <ImageButton
-            android:id="@+id/backBtn"
-            android:layout_width="30dp"
-            android:layout_height="40dp"
-            android:src="@drawable/ic_back"
-            android:background="@color/purple_700">
-
-
-        </ImageButton>
-
-
-
-    </RelativeLayout>
 
     <ScrollView
         android:layout_width="match_parent"
