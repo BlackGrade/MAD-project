@@ -86,7 +86,7 @@ public class IncomCatergoryActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
                         Toast.makeText(IncomCatergoryActivity.this,"Account Created",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(IncomCatergoryActivity.this,ExpenseCMainActivity.class));
+                        onBackPressed();
                         finish();
 
                     }

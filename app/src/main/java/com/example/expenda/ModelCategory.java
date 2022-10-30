@@ -3,17 +3,25 @@ package com.example.expenda;
 public class ModelCategory {
     String id,category;
     long timestamp;
-    String Url;
+    String Uid;
 
     public ModelCategory() {
 
+    }
+
+    public String getUid() {
+        return Uid;
     }
 
     public ModelCategory(String id, String category, long timestamp) {
         this.id = id;
         this.category = category;
         this.timestamp = timestamp;
-        this.Url = Url;
+        this.Uid = Uid;
+    }
+
+    public void setUid(String uid) {
+        Uid = uid;
     }
 
     public String getId() {
@@ -40,7 +48,7 @@ public class ModelCategory {
         this.timestamp = timestamp;
     }
 
-    public String getUrl(){return Url;}
+    public String getUrl(){return Uid;}
 
-    public void setUrl(String Url){this.Url=Url;}
+    public void setUrl(String Url){this.Uid=Uid;}
 }

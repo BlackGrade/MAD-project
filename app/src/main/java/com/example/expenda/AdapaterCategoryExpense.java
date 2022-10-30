@@ -109,6 +109,7 @@ public class AdapaterCategoryExpense extends RecyclerView.Adapter<AdapaterCatego
             public void onClick(View view) {
                 Intent intent = new Intent(context,EditCatActivity.class);
                 intent.putExtra("id",model.id);
+                intent.putExtra("uid",model.Uid);
                 context.startActivity(intent);
             }
         });

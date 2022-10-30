@@ -83,7 +83,7 @@ public class ExpenseCatergoryActivity extends AppCompatActivity {
                     public void onSuccess(Void unused) {
                         progressDialog.dismiss();
                         Toast.makeText(ExpenseCatergoryActivity.this,"Account Created",Toast.LENGTH_SHORT).show();
-                        startActivity(new Intent(ExpenseCatergoryActivity.this,ExpenseCMainActivity.class));
+                        onBackPressed();
                         finish();
 
                     }

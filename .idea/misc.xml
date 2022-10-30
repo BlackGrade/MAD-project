@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="app/src/main/res/drawable/ic_back.xml" value="0.167" />
         <entry key="app/src/main/res/drawable/update_button.xml" value="0.138" />
         <entry key="app/src/main/res/layout/activity_catergory.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/activity_edit_cat.xml" value="0.13677536231884058" />
@@ -20,7 +21,7 @@
         <entry key="app/src/main/res/layout/category.xml" value="0.26358695652173914" />
         <entry key="app/src/main/res/layout/row_category.xml" value="0.1" />
         <entry key="app/src/main/res/layout/row_categoryExpense.xml" value="0.15070921985815602" />
-        <entry key="app/src/main/res/layout/row_category_expense.xml" value="0.10914855072463768" />
+        <entry key="app/src/main/res/layout/row_category_expense.xml" value="0.6817910678144816" />
       </map>
     </option>
   </component>

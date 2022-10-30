@@ -28,12 +28,13 @@ public class EditCategoryActivity extends AppCompatActivity {
 
     private ActivityEditCategoryBinding binding;
 
-    private String id,id2;
+    private String id,uid;
     private ProgressDialog progressDialog;
     private FirebaseAuth firebaseAuth;
     private ArrayList<String> categoryEdit,categoryIDArray;
     private static final String TAG = "Book_Edit_ID";
     private ArrayList<ModelCategory> categoryArrayList;
+    private long timestamps;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -42,6 +43,8 @@ public class EditCategoryActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         firebaseAuth = FirebaseAuth.getInstance();
         id= getIntent().getStringExtra("id");
+        uid= getIntent().getStringExtra("uid");
+
 
 
         progressDialog = new ProgressDialog(this);
@@ -93,6 +96,8 @@ public class EditCategoryActivity extends AppCompatActivity {
 
 
 
+
+
     private void validateData() {
 
         category=binding.upTxt.getText().toString().trim();
@@ -114,6 +119,8 @@ public class EditCategoryActivity extends AppCompatActivity {
 
         HashMap<String , Object> hashMap = new HashMap<>();
         hashMap.put("category",category);
+        hashMap.put("id",id);
+        hashMap.put("uid",uid);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("incomeC");
         ref.child(firebaseAuth.getUid()).child(id)

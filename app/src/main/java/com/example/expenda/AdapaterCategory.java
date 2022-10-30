@@ -71,6 +71,7 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
     public void onBindViewHolder(@NonNull HolderCategory holder, int position) {
         ModelCategory model = categoryArrayList.get(position);
         String id = model.getId();
+        String uid = model.getUid();
         String category = model.getCategory();
         long timestamp = model.getTimestamp();
 
@@ -106,47 +107,53 @@ public class AdapaterCategory extends RecyclerView.Adapter<AdapaterCategory.Hold
             }
         });
 
-//        holder.updateBtn.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//                Intent intent = new Intent(context,EditCategoryActivity.class);
-//                intent.putExtra("id",model.id);
-//                context.startActivity(intent);
-//            }
-//        });
-
         holder.updateBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                moreOptionDialog(model,holder);
+                Intent intent = new Intent(context,EditCategoryActivity.class);
+                intent.putExtra("id",model.id);
+               intent.putExtra("uid",model.Uid);
+                context.startActivity(intent);
             }
         });
 
 
+//        holder.updateBtn.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                moreOptionDialog(model,holder);
+//            }
+//        });
+
+
 
     }
 
-    private void moreOptionDialog(ModelCategory model, HolderCategory holder) {
-        String[] options = {"Edit","Delete"};
-        AlertDialog.Builder builder = new AlertDialog.Builder(context);
-        builder.setTitle("Choose Option")
-                .setItems(options, new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialogInterface, int i) {
-                        if(i==0){
-                            Intent intent = new Intent(context,EditCategoryActivity.class);
-                            intent.putExtra("id",model.id);
-                            context.startActivity(intent);
-
-                        }
-                        else if (i==1){
-                            deleteCategory(model,holder);
-                        }
-
-                    }
-                })
-                .show();
-    }
+//    private void moreOptionDialog(ModelCategory model, HolderCategory holder) {
+//        long timestamps = System.currentTimeMillis();
+//        String[] options = {"Edit","Delete"};
+//        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+//        builder.setTitle("Choose Option")
+//                .setItems(options, new DialogInterface.OnClickListener() {
+//                    @Override
+//                    public void onClick(DialogInterface dialogInterface, int i) {
+//                        if(i==0){
+//                            Intent intent = new Intent(context,EditCategoryActivity.class);
+//                            intent.putExtra("id",model.id);
+//                            intent.putExtra("uid",model.Uid);
+//
+//
+//                            context.startActivity(intent);
+//
+//                        }
+//                        else if (i==1){
+//                            deleteCategory(model,holder);
+//                        }
+//
+//                    }
+//                })
+//                .show();
+//    }
 
 
     private void deleteCategory(ModelCategory model, HolderCategory holder) {
