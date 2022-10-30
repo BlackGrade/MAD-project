@@ -90,7 +90,7 @@ public class activity_login extends AppCompatActivity {
                     @Override
                     public void onSuccess(AuthResult authResult) {
                         progressDialog.dismiss();
-                        startActivity(new Intent(activity_login.this,CatergoryActivity.class));
+                        startActivity(new Intent(activity_login.this,HomeActivity.class));
                         finish();
 
 

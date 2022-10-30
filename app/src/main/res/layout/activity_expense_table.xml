@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".IncomeCMainActivity">
+    tools:context=".IncomeTable">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/ctagory"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-       app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        tools:listitem="@layout/row_category"
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+        tools:listitem="@layout/row_expense"
         android:layout_margin="5dp"
         android:layout_above="@+id/Lctr">
 
@@ -32,7 +32,7 @@
             android:id="@+id/ctr"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Add income">
+            android:text="Add Expense">
 
         </Button>
 
