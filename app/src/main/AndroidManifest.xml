@@ -17,6 +17,12 @@
             android:name=".ExpenseCMainActivity"
             android:exported="false" />
         <activity
+            android:name=".Profile"
+            android:exported="false" />
+        <activity
+            android:name=".EditProfile"
+            android:exported="false" />
+        <activity
             android:name=".IncomeCMainActivity"
             android:exported="false" />
         <activity

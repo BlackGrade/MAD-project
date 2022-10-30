@@ -50,14 +50,17 @@ public class registerActivity extends AppCompatActivity {
         });
     }
 
-    private String name = "", email = "", password ="";
+    private String name = "", email = "", password ="", contact="", age="", cPassword="";
+
 
 
     private void validateData() {
         name = binding.nameEt.getText().toString().trim();
         email = binding.emailEt.getText().toString().trim();
         password = binding.passwordEt.getText().toString().trim();
-        String cPassword = binding.cPasswordEt.getText().toString().trim();
+        cPassword = binding.cPasswordEt.getText().toString().trim();
+        age = binding.ageEt.getText().toString();
+        contact = binding.contactEt.getText().toString().trim();
 
         if(TextUtils.isEmpty(name)){
             Toast.makeText(this,"Enter Your name..",Toast.LENGTH_SHORT).show();
@@ -67,6 +70,7 @@ public class registerActivity extends AppCompatActivity {
             Toast.makeText(this,"Invalid Email...",Toast.LENGTH_SHORT).show();
 
         }
+
         else{
             
             createUserAccount();
@@ -111,6 +115,8 @@ public class registerActivity extends AppCompatActivity {
         hashMap.put("uid",uid);
         hashMap.put("email",email);
         hashMap.put("name",name);
+        hashMap.put("age", age);
+        hashMap.put("contact", contact);
         hashMap.put("timestamp",timestamp);
 
         DatabaseReference ref = FirebaseDatabase.getInstance().getReference("Users");

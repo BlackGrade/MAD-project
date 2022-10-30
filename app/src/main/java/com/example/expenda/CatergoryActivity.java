@@ -18,6 +18,13 @@ public class CatergoryActivity extends AppCompatActivity {
         binding = ActivityCatergoryBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.toolBarPic.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                startActivity(new Intent(CatergoryActivity.this, Profile.class));
+            }
+        });
+
         binding.incomeMain.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
