@@ -141,7 +141,6 @@ public class EditProfile extends AppCompatActivity {
 
                     @Override
                     public void onCancelled(@NonNull DatabaseError error) {
-
                     }
                 });
 
